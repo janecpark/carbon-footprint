@@ -1,0 +1,38 @@
+https://www.carbonindependent.org/15.html
+
+Yearly
+Electricity
+The CO2 emission factor used is 0.309 kge / kWh
+kilowatt-hours (kWh)
+The average electricity consumption is 4,800 kWh per household
+A small house3,000 kWh (0.93 tonnes CO2)
+Medium 4800 kWh (1.48 tonnes CO2)
+Large house 7,000 kWh (2.16 tonnes CO2)
+A value of 2000 kWh per person per year is used for student accommodation in a hall of residence (0.62 tonnes CO2)
+
+Green electricity reduce 25% in CO2 
+ - Good Energy; Equipower; Green Energy Dark Green and Pale Green; LoCO2 Energy Planet, Energy Pocket+ and Energy Pocket; Ecotricity New Energy + and New Energy; Ovo Green Energy and New Energy
+
+Car 
+14.3 kg CO2 per gallon
+
+Food
+How much of the food that you eat is organic?
+- none: 0.7 tonnes CO2
+- Some: 0.5 tonnes 
+- Most: 0.2 tonnes
+- All: 0
+
+How much meat/dairy do you eat?
+ Above-average meat/dairy: 0.6 tonnes
+ Average meat/dairy: 0.4 tonnes
+ Below-average meat/dairy: 0.25 tonnes
+ Lacto-vegetarian: 0.1 tonnes
+ Vegan: 0
+
+ WASTE: How much food do you waste (on average, over one fifth of edible food is thrown away)?
+ Above average (50% more): 1.16 tonnes
+ Average: 1 tonnes
+ Below average (50% less): 0.86
+ Very little (90% less): 0.75
+
