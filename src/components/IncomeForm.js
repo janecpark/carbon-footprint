@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import income from '../images/income.jpg';
+import FormContext from '../FormContext';
+import Slider from 'react-rangeslider';
+import 'react-rangeslider/lib/index.css';
 
-const HouseholdForm = () => {
-  const INITIAL_STATE = {
-    location: '',
-    household: '1',
-    income: 'average',
-  };
-  const [house, setHouse] = useState(INITIAL_STATE);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setHouse((data) => ({
-      ...data,
-      [name]: value,
-    }));
+const IncomeForm = () => {
+  const { formData, setFormData } = useContext(FormContext);
+  const history = useHistory();
+  const [income, setIncome] = useState();
+  const handleChange = (value) => {
+    setIncome(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setHouse(INITIAL_STATE);
+    setFormData((prevState) => ({
+      ...prevState,
+      input_income: income,
+    }));
+    history.push('/transport1');
   };
+
+  const labels = {
+    1: 'Average',
+    2: '<10k',
+    3: '10k',
+    4: '20k',
+    5: '30k',
+    6: '40k',
+    7: '50k',
+    8: '60k',
+    9: '80k',
+    10: '100k',
+    11: '120+',
+  };
+
   const style = {
     backgroundImage: `url('${income}`,
     height: '100vh',
@@ -31,38 +46,23 @@ const HouseholdForm = () => {
   };
 
   return (
-    <div className="HouseformForm" >
+    <div className="HouseformForm">
       <form onSubmit={handleSubmit} className="container">
-        <div className="form-group">
-          <label htmlFor="income">
-            What is your gross annual household income?
-          </label>
-          <select
-            name="income"
-            className="form-control"
-            id="income"
-            onChange={handleChange}
-          >
-            <option>Average</option>
-            <option>Less than 10k</option>
-            <option>10k</option>
-            <option>20k</option>
-            <option>40k</option>
-            <option>50k</option>
-            <option>60k</option>
-            <option>70k</option>
-            <option>80k</option>
-            <option>100k</option>
-            <option>More than 120k</option>
-          </select>
-        </div>
+        <h4>What is your gross annual household income?</h4>
+        <Slider
+          orientation="horizontal"
+          onChange={handleChange}
+          min={1}
+          max={11}
+          tooltip={false}
+          value={income}
+          labels={labels}
+        />
 
-        <Link to="/transport1" className="btn btn-success">
-          Next
-        </Link>
+        <button className="btn btn-success mt-4">Next</button>
       </form>
     </div>
   );
 };
 
-export default HouseholdForm;
+export default IncomeForm;

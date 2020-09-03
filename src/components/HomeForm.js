@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import electricity from '../images/electricity.jpg';
+import FormContext from '../FormContext';
 
 const HomeForm = () => {
   const history = useHistory();
+  const { formData, setFormData } = useContext(FormContext);
   const [homeDetails, setHomeDetails] = useState();
   const handleChange = (e) => {
     setHomeDetails(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData(prevState=>({
+      ...prevState,
+      input_footprint_housing_electricity_dollars: homeDetails
+    }))
     history.push('/home2');
   };
 
@@ -32,19 +38,14 @@ const HomeForm = () => {
               className="form-control"
               id="electricity"
               type="text"
+              placeholder='1500'
               onChange={handleChange}
             />
             <div className="input-group-addon">
-              <select name="gasoline" className="form-control" id="gasoline">
-                <option>$</option>
-                <option>kWh</option>
-              </select>
+                <label className='input-group-text'>$</label>
             </div>
             <div className="input-group-addon">
-              <select name="gasoline" className="form-control" id="gasoline">
-                <option>/yr</option>
-                <option>mo</option>
-              </select>
+                <label className='input-group-text'>/yr</label>
             </div>
           </div>
         </div>

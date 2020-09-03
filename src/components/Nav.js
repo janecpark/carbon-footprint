@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <nav className= "navbar-default bg-transparent">
+    <nav className="navbar-default bg-transparent">
       <ul className="nav justify-content-center">
         <li className="nav-item">
           <NavLink className="nav-link" to="/">
@@ -18,6 +18,16 @@ const Nav = () => {
         <li className="nav-item">
           <NavLink className="nav-link" to="/questions">
             FAQ
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/login">
+            Log In
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/signup">
+            Sign Up
           </NavLink>
         </li>
       </ul>

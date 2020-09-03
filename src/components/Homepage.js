@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import background from '../images/background.jpg';
 import './Homepage.css';
+
 const Homepage = () => {
   const style = {
     backgroundImage: `url(${background})`,

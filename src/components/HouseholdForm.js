@@ -1,12 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../FormContext';
+import Slider from 'react-rangeslider';
+import 'react-rangeslider/lib/index.css';
+
 const HouseholdForm = () => {
   const { formData, setFormData } = useContext(FormContext);
   const [house, setHouse] = useState(1);
   const history = useHistory();
-  const handleChange = (e) => {
-    setHouse(e.target.value);
+  const handleChange = (value) => {
+    setHouse(value);
   };
 
   const handleSubmit = (e) => {
@@ -17,29 +20,32 @@ const HouseholdForm = () => {
     }));
     history.push('/household3');
   };
-  
+
+  const labels = {
+    1: '1',
+    2: '2',
+    3: '3',
+    4: '4',
+    5: '5+',
+  };
+
   return (
     <div className="HouseformForm container">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="household">
-            How many people live in your household?
-          </label>
-          <select
-            name="household"
-            className="form-control"
-            id="household"
+          <h4>How many people live in your household?</h4>
+          <Slider
+            orientation="horizontal"
             onChange={handleChange}
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5+</option>
-          </select>
+            min={1}
+            max={5}
+            tooltip={false}
+            value={house}
+            labels={labels}
+          />
         </div>
 
-        <button className="btn btn-success">Next</button>
+        <button className="btn btn-success mt-4">Next</button>
       </form>
     </div>
   );

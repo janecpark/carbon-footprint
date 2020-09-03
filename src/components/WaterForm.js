@@ -1,17 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import ocean from '../images/ocean.jpg';
+import Slider from 'react-rangeslider';
+import 'react-rangeslider';
+import FormContext from '../FormContext';
 
 const WaterForm = () => {
   const history = useHistory();
-  const [waterForm, setWaterForm] = useState();
-  const handleChange = (e) => {
-    setWaterForm(e.target.value);
+  const { formData, setFormData } = useContext(FormContext);
+  const [waterForm, setWaterForm] = useState(0);
+  const handleChange = (value) => {
+    setWaterForm(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData((el) => ({
+      ...el,
+      input_footprint_housing_watersewage: waterForm,
+    }));
     history.push('/food1');
+  };
+
+  const labels = {
+    0: '0',
+    84: '1x',
+    168: '2x',
+    254: '3x',
   };
 
   const style = {
@@ -26,21 +41,17 @@ const WaterForm = () => {
   return (
     <div className="WaterForm">
       <form onSubmit={handleSubmit} className="container">
-        <div className="form-group">
-          <label htmlFor="water">Water Usage</label>
-          <input
-            type="range"
-            className="form-control-range"
-            min="0"
-            max="3x"
-            id="water"
-            onChange={handleChange}
-          />
-            <label className="float-left">0</label>
-          <label className="float-right">3x</label>
-        </div>
-        <br/>
-        <button className="btn btn-success">Next</button>
+        <h4>Water Usage to similar households</h4>
+        <Slider
+          orientation="horizontal"
+          onChange={handleChange}
+          min={0}
+          max={254}
+          tooltip={false}
+          value={waterForm}
+          labels={labels}
+        />
+        <button className="btn btn-success mt-3">Next</button>
       </form>
     </div>
   );

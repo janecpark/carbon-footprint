@@ -2,15 +2,12 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../FormContext';
 import buildings from '../images/buildings.jpg';
+import AlgoliaPlaces from 'algolia-places-react';
 
 const LocationForm = () => {
   const [location, setLocation] = useState('');
   const { formData, setFormData } = useContext(FormContext);
   let history = useHistory();
-
-  const handleChange = (e) => {
-    setLocation(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,21 +29,32 @@ const LocationForm = () => {
   };
 
   return (
-    <div className="HouseformForm ">
+    <div className="LocationForm">
       <form onSubmit={handleSubmit} className="container">
-        <div className="form-group">
-          <label htmlFor="location">Where do you live?</label>
-          <input
-            name="location"
-            className="form-control"
-            id="location"
-            type="text"
-            placeholder="Please enter city or zipcode"
-            onChange={handleChange}
-          />
-        </div>
+        <h4>Where do you live? </h4>
+        <AlgoliaPlaces
+          placeholder="Enter zipcode or city"
+          options={{
+            appId: 'pl10WLX6UF7N',
+            apiKey: 'e7ea7dc4535958f1de3218cfd66e91ba',
+            language: 'en',
+            countries: ['us'],
+            type: 'city',
+          }}
+          onChange={({ query, rawAnswer, suggestion, suggestionIndex }) =>
+            setLocation(suggestion.postcode)
+          }
+          onSuggestions={({ rawAnswer, query, suggestions }) =>
+            console.log(suggestions)
+          }
+          onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) =>
+            console.log(suggestion)
+          }
+          onLimit={({ message }) => console.log(message)}
+          onError={({ message }) => console.log(message)}
+        />
 
-        <button className="btn btn-success">Next</button>
+        <button className="btn btn-success my-2">Next</button>
       </form>
     </div>
   );

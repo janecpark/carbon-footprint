@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ResultContext from '../ResultContext';
+import Alert from '../Alert';
 
 const Result = () => {
   const { result, setResult } = useContext(ResultContext);
-  console.log(result);
 
   return (
     <div className="container">

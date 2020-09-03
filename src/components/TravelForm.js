@@ -29,24 +29,17 @@ const TravelForm = () => {
   };
 
   return (
-    <div className="TravelForm" >
+    <div className="TravelForm">
       <form onSubmit={handleSubmit} className="container">
         <div className="form-group container">
           <label htmlFor="gasoline">Gasoline</label>
           <div className="input-group">
-            <div className="input-group-addon">
-              <select name="gasoline" className="form-control" id="gasoline">
-                <option>Gasoline</option>
-                <option>Diesel</option>
-                <option>Electric</option>
-              </select>
-            </div>
             <input
               className="form-control"
               id="gasoline"
               placeholder="13,800"
               onChange={handleChange}
-            ></input>
+            />
             <label className="input-group-text">mi/yr</label>
           </div>
         </div>

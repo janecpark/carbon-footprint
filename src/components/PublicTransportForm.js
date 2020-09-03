@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import bus from '../images/bus.jpg';
+import FormContext from '../FormContext';
 
 const PublicTransportForm = () => {
   const history = useHistory();
-  const handleChange = () => {};
+  const [transport, setTransport] = useState();
+  const { formData, setFormData } = useContext(FormContext);
+  const handleChange = (e) => {
+    setTransport(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData((prevState) => ({
+      ...prevState,
+      input_footprint_transportation_publictrans: transport
+    }));
     history.push('/home1');
   };
 
@@ -20,7 +29,7 @@ const PublicTransportForm = () => {
   };
 
   return (
-    <div className="PublicTransportForm" >
+    <div className="PublicTransportForm">
       <form onSubmit={handleSubmit} className="container">
         <div className="form-group">
           <label htmlFor="public-transit">Public Transit</label>
@@ -30,26 +39,12 @@ const PublicTransportForm = () => {
               className="form-control"
               id="public-transit"
               placeholder="413"
+              onChange={handleChange}
             ></input>
             <label className="input-group-text">mi/yr</label>
             <div className="input-group-addon"></div>
           </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="air-transit">Air Travel</label>
-          <div className="input-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="3,700"
-              id="air-transit"
-            ></input>
-            <label className="input-group-text">mi/yr</label>
-            <div className="input-group-addon"></div>
-          </div>
-        </div>
-        {/* <button className="btn btn-success mr-2">Previous</button>
-        <button className="btn btn-success">Next</button> */}
         <button className="btn btn-success">Next</button>
       </form>
     </div>

@@ -10,6 +10,7 @@ import HomeForm from './HomeForm';
 import FoodForm from './FoodForm';
 import Result from './Result';
 import WaterForm from './WaterForm';
+import Signup from './Signup'
 
 const Routes = () => {
   return (
@@ -43,6 +44,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/result">
         <Result />
+      </Route>
+      <Route exact path="/signup">
+        <Signup />
       </Route>
     </Switch>
   );
