@@ -35,8 +35,8 @@ const LocationForm = () => {
         <AlgoliaPlaces
           placeholder="Enter zipcode or city"
           options={{
-            appId: 'pl10WLX6UF7N',
-            apiKey: 'e7ea7dc4535958f1de3218cfd66e91ba',
+            appId: process.env.ALG_ID,
+            apiKey: process.env.ALG_KEY,
             language: 'en',
             countries: ['us'],
             type: 'city',

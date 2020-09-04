@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// const tripcarbonApi = 'https://api.triptocarbon.xyz/v1/footprint'
 const baseURL = 'http://localhost:3001/carbon'
 
 class CarbonApi {
