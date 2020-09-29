@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
+const baseURL = 'https://carbon-footprint-v1.herokuapp.com';
 let _token = localStorage.getItem('token');
 
 /** API endpoints for the routes */
