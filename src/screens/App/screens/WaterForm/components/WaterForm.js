@@ -7,19 +7,17 @@ import FormContext from '../../../FormContext';
 
 const WaterForm = () => {
   const history = useHistory();
-  const { formData, setFormData } = useContext(FormContext);
+  const { setFormData } = useContext(FormContext);
   const [waterForm, setWaterForm] = useState(0);
   const handleChange = (value) => {
     setWaterForm(value);
   };
-  console.log(formData);
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData((el) => ({
-      ...el,
-      input_footprint_housing_watersewage: waterForm,
+    setFormData((prevState) => ({
+      ...prevState,
+      input_footprint_housing_watersewage: waterForm || 254,
     }));
-    console.log(formData);
     history.push('/food1');
   };
 
@@ -29,15 +27,6 @@ const WaterForm = () => {
     168: '2x',
     254: '3x',
   };
-
-  // const style = {
-  //   backgroundImage: `url('${ocean}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
 
   return (
     <div className="WaterForm">

@@ -18,17 +18,12 @@ const Nav = ({ handleLogOut }) => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/questions">
-            FAQ
-          </NavLink>
-        </li>
-        <li className="nav-item">
           <NavLink className="nav-link" to="/user-result">
-            Your Results
+            Saved Results
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/logout" onClick={handleLogOut}>
+          <NavLink className="nav-link" to="/login" onClick={handleLogOut}>
             Log Out
           </NavLink>
         </li>
@@ -46,11 +41,6 @@ const Nav = ({ handleLogOut }) => {
         <li className="nav-item">
           <NavLink className="nav-link" to="/about">
             About
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/questions">
-            FAQ
           </NavLink>
         </li>
         <li className="nav-item">

@@ -2,9 +2,10 @@ import React, { useState, useContext } from 'react';
 import UserApi from '../../../UserApi';
 import TokenContext from '../../../TokenContext';
 import { useHistory } from 'react-router-dom';
+import Alert from '../../../../../shared/components/Alert';
 
 const Login = () => {
-  const history = useHistory()
+  const history = useHistory();
   const { setToken } = useContext(TokenContext);
   const [userData, setUserData] = useState({
     username: '',
@@ -19,7 +20,7 @@ const Login = () => {
       [name]: value,
     }));
   };
-
+  console.log(userData);
   async function handleSubmit(e) {
     e.preventDefault();
     let data = {
@@ -29,11 +30,10 @@ const Login = () => {
     try {
       const res = await UserApi.login(data);
       setToken(res.token);
-      setUserData({ username: '', password: '' });
+      history.push('/');
     } catch (err) {
-      return setUserData((f) => ({ ...f, err }));
+      setUserData((f) => ({ ...f, errors: [...err] }));
     }
-    history.push('/')
   }
 
   const loginForm = (
@@ -46,6 +46,7 @@ const Login = () => {
           name="username"
           value={userData.username}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="form-group">
@@ -56,23 +57,18 @@ const Login = () => {
           name="password"
           value={userData.password}
           onChange={handleChange}
+          required
         />
       </div>
-      <button className="btn btn-primary">Log in</button>
+      <button className="btn btn-primary btn-block">Log in</button>
     </form>
   );
 
   return (
     <div className="Login">
-      {/* {userData.errors.length ? (
-        <div className={`alert alert-danger`} role="alert">
-          {userData.errors.map((error) => (
-            <p className="mb-0 small" key={error}>
-              {error}
-            </p>
-          ))}
-        </div>
-      ) : null} */}
+      {userData.errors.length ? (
+            <Alert type='danger' messages={userData.errors} />
+      ) : null}
       {loginForm}
     </div>
   );

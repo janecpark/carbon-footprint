@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-// import gas from '../images/gas.jpg';
 import FormContext from '../../../FormContext';
 
 const TravelForm = () => {
@@ -14,33 +13,26 @@ const TravelForm = () => {
     e.preventDefault();
     setFormData((prevState) => ({
       ...prevState,
-      input_footprint_transportation_miles1: transport,
+      input_footprint_transportation_miles1: transport || 14900,
     }));
     history.push('/transport2');
   };
-
-  // const style = {
-  //   backgroundImage: `url('${gas}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
-
+ 
   return (
     <div className="TravelForm">
       <form onSubmit={handleSubmit} className="container">
-        <div className="form-group container">
-          <label htmlFor="gasoline">Gasoline</label>
+        <div className="form-group">
+          <h4>Gasoline</h4>
           <div className="input-group">
             <input
               className="form-control"
+              type='text'
               id="gasoline"
-              placeholder="13,800"
+              placeholder="13,800 (optional)"
               onChange={handleChange}
             />
             <label className="input-group-text">mi/yr</label>
+            <div className="input-group-addon"></div>
           </div>
         </div>
         <button className="btn btn-success">Next</button>

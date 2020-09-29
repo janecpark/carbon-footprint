@@ -51,12 +51,12 @@ export default Object.freeze({
         name: 'About',
         route: '/about'
     },
-    FAQ: {
-        name: 'FAQ',
-        route: '/questions'
-    },
     USER_RESULT:{
         name: 'UserResult',
         route: '/user-result'
+    },
+    TAKE_ACTION:{
+        name:'TakeAction',
+        route: '/take-action'
     }
 });

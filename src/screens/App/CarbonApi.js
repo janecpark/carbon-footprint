@@ -1,30 +1,71 @@
 import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
-
+let _token = localStorage.getItem('token');
 class CarbonApi {
   static async travelData(formdata) {
-    const response = await axios.get(`${baseURL}/carbon/calculate`, {
-      params: formdata,
-    });
-    return response.data;
+    try {
+      const response = await axios.get(`${baseURL}/carbon/calculate`, {
+        params: formdata,
+      });
+      return response.data;
+    } catch (err) {
+      console.error('API ERROR:', err.responses);
+      let msg = err.response.data.message;
+      console.log(msg);
+      throw Array.isArray(msg) ? msg : [msg];
+    }
   }
   static async sendResult(result, username) {
-    const response = await axios.post(`${baseURL}/carbon/${username}/result`, result);
-    return response.data;
+    try {
+      const response = await axios.post(
+        `${baseURL}/carbon/${username}/result`,
+        {
+          ...result,
+          _token,
+        }
+      );
+      return response.data;
+    } catch (err) {
+      console.error('API ERROR:', err.responses);
+      let msg = err.response.data.message;
+      throw Array.isArray(msg) ? msg : [msg];
+    }
   }
   static async getResult(username) {
-    const response = await axios.get(`${baseURL}/carbon/${username}/user-result`);
-    return response;
+    try {
+      const response = await axios.get(
+        `${baseURL}/carbon/${username}/user-result`,
+        {
+          params: { _token },
+        }
+      );
+      return response;
+    } catch (err) {
+      console.error('API ERROR:', err.responses);
+      let msg = err.response.data.message;
+      throw Array.isArray(msg) ? msg : [msg];
+    }
   }
   static async removeResultApi(idx) {
-    const response = await axios.delete(`${baseURL}/carbon/${idx}`);
-    return response;
+    try {
+      const response = await axios.delete(`${baseURL}/carbon/${idx}`);
+      return response;
+    } catch (err) {
+      console.error('API ERROR:', err.responses);
+      let msg = err.response.data.message;
+      throw Array.isArray(msg) ? msg : [msg];
+    }
   }
   static async actionResult(result, idx) {
-    const response = await axios.post(`${baseURL}/takeaction/${idx}`, result);
-    console.log(response);
-    return response;
+    try {
+      const response = await axios.post(`${baseURL}/takeaction/${idx}`, result);
+      return response;
+    } catch (err) {
+      console.error('API ERROR:', err.responses);
+      let msg = err.response.data.message;
+      throw Array.isArray(msg) ? msg : [msg];
+    }
   }
 }
 

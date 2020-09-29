@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import bus from '../images/bus.jpg';
 import FormContext from '../../../FormContext';
 
 const PublicTransportForm = () => {
@@ -14,31 +13,22 @@ const PublicTransportForm = () => {
     e.preventDefault();
     setFormData((prevState) => ({
       ...prevState,
-      input_footprint_transportation_publictrans: transport
+      input_footprint_transportation_publictrans: transport || 452
     }));
     history.push('/home1');
   };
-
-  // const style = {
-  //   backgroundImage: `url('${bus}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
 
   return (
     <div className="PublicTransportForm">
       <form onSubmit={handleSubmit} className="container">
         <div className="form-group">
-          <label htmlFor="public-transit">Public Transit</label>
+          <h4>Public Transit</h4>
           <div className="input-group">
             <input
               type="text"
               className="form-control"
               id="public-transit"
-              placeholder="413"
+              placeholder="413 (optional)"
               onChange={handleChange}
             ></input>
             <label className="input-group-text">mi/yr</label>

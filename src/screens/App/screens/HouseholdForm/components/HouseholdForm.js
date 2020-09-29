@@ -13,10 +13,9 @@ const HouseholdForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(house);
     setFormData((prevState) => ({
       ...prevState,
-      input_size: house,
+      input_size: house || 2,
     }));
     history.push('/household3');
   };
@@ -29,9 +28,11 @@ const HouseholdForm = () => {
     5: '5+',
   };
 
+   
+
   return (
-    <div className="HouseformForm container">
-      <form onSubmit={handleSubmit}>
+    <div className="HouseformForm ">
+      <form onSubmit={handleSubmit} className='container'>
         <div className="form-group">
           <h4>How many people live in your household?</h4>
           <Slider

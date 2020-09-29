@@ -21,8 +21,6 @@ const UserResult = () => {
     setUserData(userData.filter((r) => r.id !== idx));
   }
 
- 
-
   const displayResult = userData.map((r) => (
     <ResultCard
       key={r.id}
@@ -36,10 +34,11 @@ const UserResult = () => {
     />
   ));
 
+
   return (
-    <div>
-      User results
-      {displayResult}
+    <div className="User-result">
+      <h2 className=" User-result-text text-center container">Saved Results</h2>
+      <div className="card-container">{displayResult}</div>
     </div>
   );
 };

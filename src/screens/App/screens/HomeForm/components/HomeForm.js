@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-// import electricity from '../images/electricity.jpg';
 import FormContext from '../../../FormContext';
 
 const HomeForm = () => {
@@ -12,40 +11,32 @@ const HomeForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData(prevState=>({
+    setFormData((prevState) => ({
       ...prevState,
-      input_footprint_housing_electricity_dollars: homeDetails
-    }))
+      input_footprint_housing_electricity_dollars: homeDetails || 1570,
+    }));
     history.push('/home2');
   };
 
-  // const style = {
-  //   backgroundImage: `url('${electricity}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
   return (
     <div className="HomeForm">
       <form onSubmit={handleSubmit} className="container">
         <div className="form-group">
-          <label htmlFor="Electricity">Electricity</label>
+          <h4>Electricity</h4>
           <div className="input-group">
             <input
               name="electricity"
               className="form-control"
               id="electricity"
               type="text"
-              placeholder='1500'
+              placeholder="1500 (optional)"
               onChange={handleChange}
             />
             <div className="input-group-addon">
-                <label className='input-group-text'>$</label>
+              <label className="input-group-text">$</label>
             </div>
             <div className="input-group-addon">
-                <label className='input-group-text'>/yr</label>
+              <label className="input-group-text">/yr</label>
             </div>
           </div>
         </div>

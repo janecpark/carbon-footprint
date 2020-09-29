@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="HomeForm"
+  >
+    <form
+      class="container"
+    >
+      <div
+        class="form-group"
+      >
+        <h4>
+          Electricity
+        </h4>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="electricity"
+            name="electricity"
+            placeholder="1500 (optional)"
+            type="text"
+          />
+          <div
+            class="input-group-addon"
+          >
+            <label
+              class="input-group-text"
+            >
+              $
+            </label>
+          </div>
+          <div
+            class="input-group-addon"
+          >
+            <label
+              class="input-group-text"
+            >
+              /yr
+            </label>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-success"
+      >
+        Next
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

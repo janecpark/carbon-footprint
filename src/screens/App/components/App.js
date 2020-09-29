@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Nav from './Nav';
 import FormContext from '../FormContext';
 import ResultContext from '../ResultContext';
@@ -11,6 +11,7 @@ import useLocalStorage from './LocalStorage';
 import UserApi from '../UserApi';
 import TokenContext from '../TokenContext';
 import ActionContext from '../ActionContext';
+import Footer from '../../../shared/components/Footer'
 
 function App() {
   const [result, setResult] = useState({});
@@ -28,7 +29,6 @@ function App() {
     input_footprint_housing_watersewage: 254,
     input_footprint_shopping_food_meatfisheggs_default: 1086,
   });
-
   useEffect(() => {
     async function getCurUser() {
       try {
@@ -65,6 +65,7 @@ function App() {
           </ResultContext.Provider>
         </FormContext.Provider>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }

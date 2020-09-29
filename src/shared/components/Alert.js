@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-/**Alerts if wrong information is submitted */
-
-function Alert({type, messages}){
-    return(
-        <div className={`alert alert-${type}`} role="alert" >
-            {messages.map(error =>(
-                <p className="mb-0 small" key={error} >
-                    {error}
-                </p>
-            ))}
-            </div>
-    )
+function Alert({ type, messages }) {
+  return (
+    <div className="alert-container">
+      <div className={`alert alert-${type}`} role="alert">
+        {messages.map((m) => (
+          <p className="mb-0 small" key={m}>
+            {m}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Alert;

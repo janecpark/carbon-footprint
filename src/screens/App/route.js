@@ -9,8 +9,10 @@ import ResultRoute from './screens/Result/route';
 import SignupRoute from './screens/Signup/route';
 import TravelFormRoute from './screens/TravelForm/route';
 import WaterFormRoute from './screens/WaterForm/route';
-import LoginRoute from './screens/Login/route'
-import UserResult from './screens/UserResult/route'
+import LoginRoute from './screens/Login/route';
+import UserResult from './screens/UserResult/route';
+import TakeAction from './screens/TakeAction/route';
+import About from './screens/About/route';
 
 export default [
   FoodFormRoute,
@@ -25,5 +27,7 @@ export default [
   TravelFormRoute,
   WaterFormRoute,
   LoginRoute,
-  UserResult
+  UserResult,
+  TakeAction,
+  About
 ];

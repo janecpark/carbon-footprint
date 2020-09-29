@@ -6,10 +6,9 @@ import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
 
 const IncomeForm = () => {
-  const { formData, setFormData } = useContext(FormContext);
+  const { setFormData } = useContext(FormContext);
   const history = useHistory();
   const [income, setIncome] = useState();
-  console.log(formData);
   const handleChange = (value) => {
     setIncome(value);
   };
@@ -18,9 +17,8 @@ const IncomeForm = () => {
     e.preventDefault();
     setFormData((prevState) => ({
       ...prevState,
-      input_income: income,
+      input_income: income || 2,
     }));
-    console.log(formData);
     history.push('/transport1');
   };
 
@@ -38,14 +36,6 @@ const IncomeForm = () => {
     11: '120+',
   };
 
-  // const style = {
-  //   backgroundImage: `url('${income}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
 
   return (
     <div className="HouseformForm">

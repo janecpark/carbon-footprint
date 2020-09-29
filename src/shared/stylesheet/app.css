@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body {
+  background-image: url('../images/earth.png');
+  height: 90vh;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  width: 100vw;
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#stepBtn {
+  position: absolute;
+  bottom: 20%;
+  left: 46%;
+  right: 46%;
+  background-color: #aad4f1;
+  border: none;
+  padding: 10px !important;
+}
+
+#stepBtn:hover {
+  background-color: #a1ceee;
+}
+
+.Homepage-header {
+  padding: 15%;
+  font-family: Rubik !important;
+}
+
+form {
+  padding: 15% 0;
+}
+
+.btn,
+.btn:hover {
+  background-color: #aad4f1 !important;
+  color: black !important;
+  border: none !important;
+  font-size: 1.5vh !important;
+}
+
+.btn:hover {
+  background-color: #a1ceee !important;
+  color: black !important;
+  border: none !important;
+}
+
+input[type],
+input[type]:focus {
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.card {
+  background-color: transparent !important;
+  margin: 1em;
+  width: 40rem !important;
+}
+
+.result-display {
+  font-size: 2vh !important;
+}
+
+.figures-num,
+.take-action-num {
+  font-size: 1.5em;
+}
+
+.figures-total,
+.take-action-total,
+.about-header {
+  font-size: 1.8em;
+}
+
+.figures {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.11;
+}
+
+.Results,
+.TakeAction,
+.User-result-text {
+  margin-top: 5%;
+}
+
+.figures-display {
+  margin: 0 auto;
+  width: 800px !important;
+}
+
+.take-action-display {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.take-action-text {
+  line-height: 2.2;
+}
+
+.figures-btn,
+.take-action-btn,
+.err-btn{
+  margin-top: 10%;
+}
+
+.About, .about-content, .figures-display{
+  margin-top: 5%;
+}
+
+.alert-container {
+  width: 40%;
+  position: fixed;
+  left: 28%;
+  top: 5%;
+}
+
+.Footer {
+  position: fixed;
+  left: 15px;
+  bottom: 0;
+}

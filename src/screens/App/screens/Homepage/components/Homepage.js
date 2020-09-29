@@ -1,22 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import background from '../images/background.jpg';
-// import './Homepage.css';
+import '../../../../../shared/stylesheet/app.css';
+import earthbg from '../images/earthbg.png';
 
 const Homepage = () => {
-  // const style = {
-  //   backgroundImage: `url(${background})`,
-  //   backgroundSize: 'cover',
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   width: '100vw',
-  // };
+  const style = {
+    backgroundImage: `url(${earthbg})`,
+    backgroundSize: 'auto',
+    height: '90vh',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    width: '100vw',
+  };
+
   return (
-    <div className="Homepage">
-      <div className="container header">
-        <h2>Welcome to Carbon Footprint Calculator</h2>
-        <Link to="/household1" className="btn btn-warning">
+    <div className="Homepage" style={style}>
+      <div className="container header text-center ">
+        <h2 className="Homepage-header">
+          Welcome to Carbon Footprint Calculator
+        </h2>
+        <Link
+          to="/household1"
+          className="btn btn-warning text-center"
+          id="stepBtn"
+        >
           Take the first step
         </Link>
       </div>

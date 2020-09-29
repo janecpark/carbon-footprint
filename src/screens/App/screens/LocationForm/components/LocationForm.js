@@ -1,40 +1,27 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../../../FormContext';
-// import buildings from '../images/buildings.jpg';
 import AlgoliaPlaces from 'algolia-places-react';
 
 const LocationForm = () => {
   const [location, setLocation] = useState('');
-  const { formData, setFormData } = useContext(FormContext);
+  const { setFormData } = useContext(FormContext);
   let history = useHistory();
-  console.log(formData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   console.log(location);
     setFormData((formData) => ({
       ...formData,
       input_location: location,
     }));
-    console.log(formData);
     setLocation('');
     history.push('/household2');
   };
 
-  // const style = {
-  //   backgroundImage: `url('${buildings}`,
-  //   height: '100vh',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   width: '100vw',
-  // };
-
   return (
     <div className="LocationForm">
-      <form onSubmit={handleSubmit} className="container">
-        <h4>Where do you live? </h4>
+      <form onSubmit={handleSubmit} className="container ">
+        <h4 className='LocationForm-header'>Where do you live? </h4>
         <AlgoliaPlaces
           placeholder="Enter zipcode or city"
           options={{
