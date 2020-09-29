@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../../../../../shared/stylesheet/app.css';
 import earthbg from '../images/earthbg.png';
 
+/** Home page shows button to start the questionnaire */
+
 const Homepage = () => {
   const style = {
     backgroundImage: `url(${earthbg})`,

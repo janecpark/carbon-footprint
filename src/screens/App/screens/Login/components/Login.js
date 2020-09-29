@@ -4,6 +4,8 @@ import TokenContext from '../../../TokenContext';
 import { useHistory } from 'react-router-dom';
 import Alert from '../../../../../shared/components/Alert';
 
+/** Log in form that logs in users and sets the token in localStorage */
+
 const Login = () => {
   const history = useHistory();
   const { setToken } = useContext(TokenContext);
@@ -20,7 +22,6 @@ const Login = () => {
       [name]: value,
     }));
   };
-  console.log(userData);
   async function handleSubmit(e) {
     e.preventDefault();
     let data = {
@@ -67,7 +68,7 @@ const Login = () => {
   return (
     <div className="Login">
       {userData.errors.length ? (
-            <Alert type='danger' messages={userData.errors} />
+        <Alert type="danger" messages={userData.errors} />
       ) : null}
       {loginForm}
     </div>

@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../../../FormContext';
 
+/** Shows a form to get information about public transportation  */
+
 const PublicTransportForm = () => {
   const history = useHistory();
   const [transport, setTransport] = useState();
@@ -13,7 +15,7 @@ const PublicTransportForm = () => {
     e.preventDefault();
     setFormData((prevState) => ({
       ...prevState,
-      input_footprint_transportation_publictrans: transport || 452
+      input_footprint_transportation_publictrans: transport || 452,
     }));
     history.push('/home1');
   };

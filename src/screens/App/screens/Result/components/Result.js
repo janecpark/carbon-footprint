@@ -7,12 +7,15 @@ import ActionContext from '../../../ActionContext';
 import '../../../../../../node_modules/react-vis/dist/style.css';
 import { XYPlot, XAxis, YAxis, VerticalBarSeries } from 'react-vis';
 
+/** Renders result and chart to show the carbon footprint calculations
+ * Option to save results and view ways to reduce emissions
+ */
+
 const Result = () => {
   const history = useHistory();
   const { result } = useContext(ResultContext);
   const { curUser } = useContext(UserContext);
   const { action } = useContext(ActionContext);
-  console.log(result);
   let values = Object.values(result);
   let types = Object.keys(result);
   values.pop();
@@ -103,11 +106,10 @@ const Result = () => {
           </>
         ) : (
           <>
-          {result_display}
-          {curUser ? loggedInBtn : loggedOutBtn}
+            {result_display}
+            {curUser ? loggedInBtn : loggedOutBtn}
           </>
         )}
-       
       </div>
     </div>
   );

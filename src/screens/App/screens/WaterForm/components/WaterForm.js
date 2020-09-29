@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-// import ocean from '../images/ocean.jpg';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider';
 import FormContext from '../../../FormContext';
+
+/** Form to get information about water usage  */
 
 const WaterForm = () => {
   const history = useHistory();

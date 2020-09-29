@@ -1,3 +1,5 @@
+/** Helpder function to get the sum of the arguments passed in */
+
 function getTotal(...args) {
   let sum = 0;
   for (let el in args) {

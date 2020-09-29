@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import TokenContext from '../../../TokenContext';
 import Alert from '../../../../../shared/components/Alert';
 
+/** Sign up form that registers users and sets token in localStorage */
+
 const Signup = () => {
   const { setToken } = useContext(TokenContext);
   const history = useHistory();
@@ -34,7 +36,6 @@ const Signup = () => {
       res = await UserApi.signUp(data);
       setToken(res.token);
     } catch (err) {
-      console.log(err);
       return setUserData((f) => ({ ...f, errors: err }));
     }
     history.push('/');

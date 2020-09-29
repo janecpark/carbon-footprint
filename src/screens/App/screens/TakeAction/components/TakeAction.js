@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActionContext from '../../../ActionContext';
 
+/** Shows result to reduce carbon footprint  */
+
 const TakeAction = () => {
   const { action } = useContext(ActionContext);
   const action_display = (

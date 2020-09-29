@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-// import income from '../images/income.jpg';
 import FormContext from '../../../FormContext';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
+
+/** Shows a form to get information about household income  */
 
 const IncomeForm = () => {
   const { setFormData } = useContext(FormContext);
@@ -36,7 +37,6 @@ const IncomeForm = () => {
     11: '120+',
   };
 
-
   return (
     <div className="HouseformForm">
       <form onSubmit={handleSubmit} className="container">
@@ -50,7 +50,6 @@ const IncomeForm = () => {
           value={income}
           labels={labels}
         />
-
         <button className="btn btn-success mt-4">Next</button>
       </form>
     </div>

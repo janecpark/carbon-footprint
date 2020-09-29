@@ -3,6 +3,8 @@ import CarbonApi from '../../../CarbonApi';
 import UserContext from '../../../UserContext';
 import ResultCard from './ResultCard';
 
+/** Fetches user result from database and renders a list */
+
 const UserResult = () => {
   const { curUser } = useContext(UserContext);
   const [userData, setUserData] = useState([]);
@@ -34,11 +36,12 @@ const UserResult = () => {
     />
   ));
 
-
   return (
     <div className="User-result">
       <h2 className=" User-result-text text-center container">Saved Results</h2>
-      <div className="card-container">{displayResult}</div>
+      {userData.length ? 
+      <div className="card-container">{displayResult}</div> : <p className='text-center'> No saved results! </p>
+      }
     </div>
   );
 };

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="About container"
+  >
+    <h1
+      class="text-center"
+    >
+      About
+    </h1>
+    <div
+      class="about-content"
+    >
+      <div
+        class="about-header"
+      >
+        What it is
+      </div>
+      <div
+        class="about-text"
+      >
+        Allows individuals or households in the U.S. to calculate their carbon footprint and get personalized advice on managing their climate impact.
+        <br />
+        <br />
+        Sign up to save results and compare past results.
+      </div>
+      <br />
+      <hr />
+      <div
+        class="about-header"
+      >
+        How it is calculated
+      </div>
+      <div
+        class="about-text"
+      >
+        The data is calculated using
+        <a
+          href="https://api-central.berkeley.edu/api/11"
+        >
+           CoolClimate API 
+        </a>
+        by U.C. Berkeley.
+      </div>
+      <br />
+      <hr />
+      <div
+        class="about-header"
+      >
+        What information is used
+      </div>
+      <div
+        class="about-text"
+      >
+        User's location, income, household, transportation, public transportation, water usage, and food consumption
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

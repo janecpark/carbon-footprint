@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import UserContext from '../UserContext';
 
+/** Navigation component that renders different views for logged in/out users */
+
 const Nav = ({ handleLogOut }) => {
   const { curUser } = useContext(UserContext);
   function loggedInLinks() {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+/** Result card component */
+
 const ResultCard = ({
   food,
   housing,

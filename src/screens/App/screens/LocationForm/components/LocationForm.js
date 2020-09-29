@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import FormContext from '../../../FormContext';
 import AlgoliaPlaces from 'algolia-places-react';
 
+/** Shows a form to get information about user's location  */
+
 const LocationForm = () => {
   const [location, setLocation] = useState('');
   const { setFormData } = useContext(FormContext);
@@ -21,7 +23,7 @@ const LocationForm = () => {
   return (
     <div className="LocationForm">
       <form onSubmit={handleSubmit} className="container ">
-        <h4 className='LocationForm-header'>Where do you live? </h4>
+        <h4 className="LocationForm-header">Where do you live? </h4>
         <AlgoliaPlaces
           placeholder="Enter zipcode or city"
           options={{

@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../../../FormContext';
 
+/** Shows a form to get information about electricity usage */
+
 const HomeForm = () => {
   const history = useHistory();
   const { setFormData } = useContext(FormContext);

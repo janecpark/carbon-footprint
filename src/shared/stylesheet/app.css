@@ -107,11 +107,13 @@ input[type]:focus {
 
 .figures-btn,
 .take-action-btn,
-.err-btn{
+.err-btn {
   margin-top: 10%;
 }
 
-.About, .about-content, .figures-display{
+.About,
+.about-content,
+.figures-display {
   margin-top: 5%;
 }
 

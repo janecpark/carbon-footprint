@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FormContext from '../../../FormContext';
 
+/** Form to get information about transportation usage in miles*/
+
 const TravelForm = () => {
   const history = useHistory();
   const { setFormData } = useContext(FormContext);
@@ -17,7 +19,7 @@ const TravelForm = () => {
     }));
     history.push('/transport2');
   };
- 
+
   return (
     <div className="TravelForm">
       <form onSubmit={handleSubmit} className="container">
@@ -26,7 +28,7 @@ const TravelForm = () => {
           <div className="input-group">
             <input
               className="form-control"
-              type='text'
+              type="text"
               id="gasoline"
               placeholder="13,800 (optional)"
               onChange={handleChange}

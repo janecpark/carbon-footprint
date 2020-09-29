@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import FormContext from '../FormContext';
 import ResultContext from '../ResultContext';
@@ -11,7 +11,13 @@ import useLocalStorage from './LocalStorage';
 import UserApi from '../UserApi';
 import TokenContext from '../TokenContext';
 import ActionContext from '../ActionContext';
-import Footer from '../../../shared/components/Footer'
+import Footer from '../../../shared/components/Footer';
+
+/**
+ * Fetches user data
+ * Handles log in and log out functions
+ * Provides contexts for routes
+ */
 
 function App() {
   const [result, setResult] = useState({});
@@ -65,7 +71,7 @@ function App() {
           </ResultContext.Provider>
         </FormContext.Provider>
       </Switch>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

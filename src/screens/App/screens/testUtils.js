@@ -1,8 +1,10 @@
 import React from 'react';
 import UserContext from '../UserContext';
 import FormContext from '../FormContext';
-import ResultContext from '../ResultContext'
+import ResultContext from '../ResultContext';
 import ActionContext from '../ActionContext';
+
+/** Utilities to provide context for testing purposes */
 
 const demoUser = {
   username: 'test',

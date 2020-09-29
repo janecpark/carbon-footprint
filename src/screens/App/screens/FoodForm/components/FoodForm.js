@@ -8,6 +8,11 @@ import 'react-rangeslider/lib/index.css';
 import getTotal from './CalHelper';
 import ActionContext from '../../../ActionContext';
 
+/**
+ * Shows a form to get food consumption information
+ * Last page of the form that gathers all the data and sends the data to get result
+ */
+
 const FoodForm = () => {
   const history = useHistory();
   const { formData, setFormData } = useContext(FormContext);
@@ -27,8 +32,8 @@ const FoodForm = () => {
       let res = await CarbonApi.travelData(formData);
       let data = JSON.parse(res.result);
       if (data.response.hasOwnProperty('failed')) {
-        setResult((e) => ({ ...e, errors: data.response.error_message}));
-      }else{
+        setResult((e) => ({ ...e, errors: data.response.error_message }));
+      } else {
         setResult({
           food: Number(parseFloat(data.response.result_food_total).toFixed(2)),
           housing: Number(

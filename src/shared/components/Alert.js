@@ -1,5 +1,7 @@
 import React from 'react';
 
+/** Component to display alert messages */
+
 function Alert({ type, messages }) {
   return (
     <div className="alert-container">

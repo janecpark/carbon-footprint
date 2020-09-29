@@ -3,6 +3,8 @@ import axios from 'axios';
 const baseURL = 'http://localhost:3001';
 let _token = localStorage.getItem('token');
 
+/** API endpoints for the routes */
+
 class UserApi {
   static async signUp(data) {
     try{

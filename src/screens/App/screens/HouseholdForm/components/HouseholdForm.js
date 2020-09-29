@@ -4,6 +4,8 @@ import FormContext from '../../../FormContext';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
 
+/** Shows a form to get information about household  */
+
 const HouseholdForm = () => {
   const { setFormData } = useContext(FormContext);
   const [house, setHouse] = useState(1);
@@ -28,11 +30,9 @@ const HouseholdForm = () => {
     5: '5+',
   };
 
-   
-
   return (
     <div className="HouseformForm ">
-      <form onSubmit={handleSubmit} className='container'>
+      <form onSubmit={handleSubmit} className="container">
         <div className="form-group">
           <h4>How many people live in your household?</h4>
           <Slider
