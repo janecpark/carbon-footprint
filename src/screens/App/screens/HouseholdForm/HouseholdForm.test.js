@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import HouseholdForm from './components/HouseholdForm';
 import {
@@ -40,4 +40,23 @@ it('matches snapshot', function () {
     </MemoryRouter>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+
+test('renders text on page', () => {
+  const { getByText } = render(
+    <MemoryRouter>
+      <UserProvider>
+        <FormProvider>
+          <ResultProvider>
+            <ActionProvider>
+              <HouseholdForm />
+            </ActionProvider>
+          </ResultProvider>
+        </FormProvider>
+      </UserProvider>
+    </MemoryRouter>
+  );
+  const element = getByText(/How many/);
+  expect(element).toBeInTheDocument();
 });

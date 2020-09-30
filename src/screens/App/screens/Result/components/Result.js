@@ -33,10 +33,10 @@ const Result = () => {
     history.push('/user-result');
   }
 
-  const result_display = (
+  const result_display_logged_in = (
     <div className="figures-display">
       <div className="row">
-        <div className="col-sm">
+        <div className="col-md">
           <div className="figures">
             <div className="figures-total">{result.total}</div>
             <div className="figures-text text-right">
@@ -57,34 +57,64 @@ const Result = () => {
             <div className="figures-text">Transport</div>
           </div>
         </div>
-        <div className="col-sm">
+        <div className="col-md graph">
           <XYPlot height={300} width={300} xType="ordinal" stackBy="y">
-            <VerticalBarSeries data={data} />
+            <VerticalBarSeries data={data} color="#CADFB6" />
             <XAxis />
             <YAxis />
           </XYPlot>
         </div>
       </div>
+      <div className="d-flex justify-content-center figures-btn">
+        <button onClick={handleSubmit} className="btn btn-primary result-btn">
+          Save Results
+        </button>
+        <Link to="/take-action" className="btn btn-warning result-btn ml-2">
+          Take Action
+        </Link>
+      </div>
+    </div>
+  );
+  const result_display_logged_out = (
+    <div className="figures-display">
+      <div className="row">
+        <div className="col-md">
+          <div className="figures">
+            <div className="figures-total">{result.total}</div>
+            <div className="figures-text text-right">
+              Your Carbon Footprint (CO2 emissions/year)
+            </div>
+          </div>
+          <hr />
+          <div className="figures">
+            <div className="figures-num">{result.food}</div>
+            <div className="figures-text">Food</div>
+          </div>
+          <div className="figures">
+            <div className="figures-num">{result.housing}</div>
+            <div className="figures-text">Housing</div>
+          </div>
+          <div className="figures">
+            <div className="figures-num">{result.transport}</div>
+            <div className="figures-text">Transport</div>
+          </div>
+        </div>
+        <div className="col-md graph">
+          <XYPlot height={300} width={300} xType="ordinal" stackBy="y">
+            <VerticalBarSeries data={data} color="#CADFB6" />
+            <XAxis />
+            <YAxis />
+          </XYPlot>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center figures-btn">
+        <Link to="/take-action" className="btn btn-warning ml-2">
+          Take Action
+        </Link>
+      </div>
     </div>
   );
 
-  const loggedInBtn = (
-    <div className="d-flex justify-content-center figures-btn">
-      <button onClick={handleSubmit} className="btn btn-primary">
-        Save Results
-      </button>
-      <Link to="/take-action" className="btn btn-warning ml-2">
-        Take Action
-      </Link>
-    </div>
-  );
-  const loggedOutBtn = (
-    <div className="d-flex justify-content-center figures-btn">
-      <Link to="/take-action" className="btn btn-warning ml-2">
-        Take Action
-      </Link>
-    </div>
-  );
   const error_display = (
     <div className="error_display text-center">
       <h4>{result.errors}</h4>
@@ -93,9 +123,10 @@ const Result = () => {
       </Link>
     </div>
   );
+
   return (
     <div className="Results">
-      <h2 className="text-center mt-4">Results page</h2>
+      <h2 className="text-center mt-1">Results page</h2>
       <div className="Results-display">
         <br />
         {result.errors || Object.entries(result).length === 0 ? (
@@ -105,10 +136,7 @@ const Result = () => {
             {error_display}
           </>
         ) : (
-          <>
-            {result_display}
-            {curUser ? loggedInBtn : loggedOutBtn}
-          </>
+          <>{curUser ? result_display_logged_in : result_display_logged_out}</>
         )}
       </div>
     </div>

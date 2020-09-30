@@ -4,7 +4,7 @@ import Nav from './Nav';
 import FormContext from '../FormContext';
 import ResultContext from '../ResultContext';
 import UserContext from '../UserContext';
-import { RouteWithSubRoutes } from '../../../shared/components/RouteWithSubRoutes';
+import { RouteWithSubRoutes } from '../../../shared/components/';
 import routes from '../route';
 import { decode } from 'jsonwebtoken';
 import useLocalStorage from './LocalStorage';

@@ -3,6 +3,7 @@ import UserContext from '../UserContext';
 import FormContext from '../FormContext';
 import ResultContext from '../ResultContext';
 import ActionContext from '../ActionContext';
+import TokenContext from '../TokenContext';
 
 /** Utilities to provide context for testing purposes */
 
@@ -56,4 +57,8 @@ const ActionProvider = ({ children, action = demoAction }) => (
   <ActionContext.Provider value={{ action }}>{children}</ActionContext.Provider>
 );
 
-export { UserProvider, ResultProvider, FormProvider, ActionProvider };
+const TokenProvider = ({ children, setToken }) => (
+  <TokenContext.Provider value={{ setToken }}>{children}</TokenContext.Provider>
+);
+
+export { UserProvider, ResultProvider, FormProvider, ActionProvider, TokenProvider };

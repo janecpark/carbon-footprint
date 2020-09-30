@@ -41,3 +41,21 @@ it('matches snapshot', function () {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('renders text on page', () => {
+  const { getByText } = render(
+    <MemoryRouter>
+      <UserProvider>
+        <FormProvider>
+          <ResultProvider>
+            <ActionProvider>
+              <Homepage />
+            </ActionProvider>
+          </ResultProvider>
+        </FormProvider>
+      </UserProvider>
+    </MemoryRouter>
+  );
+  const element = getByText(/Welcome/);
+  expect(element).toBeInTheDocument();
+});

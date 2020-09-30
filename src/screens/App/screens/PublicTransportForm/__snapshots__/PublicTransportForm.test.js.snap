@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="PublicTransportForm"
+  >
+    <form
+      class="container"
+    >
+      <div
+        class="form-group"
+      >
+        <h4>
+          Public Transit
+        </h4>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="public-transit"
+            placeholder="413 (optional)"
+            type="text"
+          />
+          <label
+            class="input-group-text"
+          >
+            mi/yr
+          </label>
+          <div
+            class="input-group-addon"
+          />
+        </div>
+      </div>
+      <button
+        class="btn btn-success"
+      >
+        Next
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

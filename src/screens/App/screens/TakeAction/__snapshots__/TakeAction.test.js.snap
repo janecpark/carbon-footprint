@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="TakeAction container"
+  >
+    <h2
+      class="text-center"
+    >
+      Reduce your impact with these actions
+    </h2>
+    <br />
+    <br />
+    <div
+      class="take-action-display"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <div
+            class="take-action-num"
+          >
+            1
+          </div>
+          <div
+            class="take-action-num"
+          >
+            1
+          </div>
+          <div
+            class="take-action-num"
+          >
+            1
+          </div>
+          <div
+            class="take-action-num"
+          >
+            1
+          </div>
+          <div
+            class="take-action-num"
+          >
+            1
+          </div>
+          <p>
+            In tons
+          </p>
+        </div>
+        <div
+          class="col"
+        >
+          <div
+            class="take-action-text"
+          >
+            Car pool
+          </div>
+          <div
+            class="take-action-text"
+          >
+            Use public transportation
+          </div>
+          <div
+            class="take-action-text"
+          >
+            Go organic
+          </div>
+          <div
+            class="take-action-text"
+          >
+            Use energy star fridge
+          </div>
+          <div
+            class="take-action-text"
+          >
+            Use green electricity
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex justify-content-center take-action-btn"
+      >
+        <a
+          class="btn btn-warning action-btn btn-block"
+          href="/result"
+        >
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

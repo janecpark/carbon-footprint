@@ -7,6 +7,7 @@ import {
   FormProvider,
   ResultProvider,
   ActionProvider,
+  TokenProvider,
 } from '../testUtils';
 
 it('renders without crashing', function () {
@@ -16,7 +17,9 @@ it('renders without crashing', function () {
         <FormProvider>
           <ResultProvider>
             <ActionProvider>
-              <Signup />
+              <TokenProvider>
+                <Signup />
+              </TokenProvider>
             </ActionProvider>
           </ResultProvider>
         </FormProvider>
@@ -32,7 +35,9 @@ it('matches snapshot', function () {
         <FormProvider>
           <ResultProvider>
             <ActionProvider>
-              <Signup />
+              <TokenProvider>
+                <Signup />
+              </TokenProvider>
             </ActionProvider>
           </ResultProvider>
         </FormProvider>
@@ -40,4 +45,24 @@ it('matches snapshot', function () {
     </MemoryRouter>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('renders text on page', () => {
+  const { getByText } = render(
+    <MemoryRouter>
+      <UserProvider>
+        <FormProvider>
+          <ResultProvider>
+            <ActionProvider>
+              <TokenProvider>
+                <Signup />
+              </TokenProvider>
+            </ActionProvider>
+          </ResultProvider>
+        </FormProvider>
+      </UserProvider>
+    </MemoryRouter>
+  );
+  const element = getByText(/Sign Up/);
+  expect(element).toBeInTheDocument();
 });

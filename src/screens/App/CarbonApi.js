@@ -15,7 +15,6 @@ class CarbonApi {
     } catch (err) {
       console.error('API ERROR:', err.responses);
       let msg = err.response.data.message;
-      console.log(msg);
       throw Array.isArray(msg) ? msg : [msg];
     }
   }

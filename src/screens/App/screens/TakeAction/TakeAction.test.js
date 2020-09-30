@@ -41,3 +41,22 @@ it('matches snapshot', function () {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+
+test('renders text on page', () => {
+  const { getByText } = render(
+    <MemoryRouter>
+      <UserProvider>
+        <FormProvider>
+          <ResultProvider>
+            <ActionProvider>
+              <TakeAction />
+            </ActionProvider>
+          </ResultProvider>
+        </FormProvider>
+      </UserProvider>
+    </MemoryRouter>
+  );
+  const element = getByText(/Reduce/);
+  expect(element).toBeInTheDocument();
+});

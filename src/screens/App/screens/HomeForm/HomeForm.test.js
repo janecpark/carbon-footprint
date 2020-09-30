@@ -41,3 +41,21 @@ it('matches snapshot', function () {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('renders text on page', () => {
+  const { getByText } = render(
+    <MemoryRouter>
+      <UserProvider>
+        <FormProvider>
+          <ResultProvider>
+            <ActionProvider>
+              <HomeForm />
+            </ActionProvider>
+          </ResultProvider>
+        </FormProvider>
+      </UserProvider>
+    </MemoryRouter>
+  );
+  const element = getByText(/Electricity/);
+  expect(element).toBeInTheDocument();
+});

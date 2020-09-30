@@ -49,6 +49,24 @@ form {
   border: none !important;
 }
 
+.result-btn, .action-btn {
+  background-color: #cadfb6 !important;
+  color: black !important;
+  border: none !important;
+  font-size: 1.5vh !important;
+  padding: 10px !important;
+
+}
+
+.result-btn:hover, .action-btn {
+  background-color: #cadfb6d5 !important;
+  color: black !important;
+  border: none !important;
+  font-size: 1.5vh !important;
+  padding: 10px !important;
+
+}
+
 input[type],
 input[type]:focus {
   background-color: transparent;
@@ -56,9 +74,11 @@ input[type]:focus {
 }
 
 .card {
-  background-color: transparent !important;
+  background-color: white !important;
   margin: 1em;
   width: 40rem !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .result-display {
@@ -70,19 +90,27 @@ input[type]:focus {
   font-size: 1.5em;
 }
 
-.figures-total,
+.figures-total {
+  color: #cadfb6;
+  font-size: 1.8em;
+}
+
 .take-action-total,
 .about-header {
   font-size: 1.8em;
+}
+.about-header, .card-total{
+  color: #cadfb6;
 }
 
 .figures {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
   margin-bottom: 1rem;
   line-height: 1.11;
+  min-width: 200px !important;
+  box-sizing: border-box;
 }
 
 .Results,
@@ -90,15 +118,30 @@ input[type]:focus {
 .User-result-text {
   margin-top: 5%;
 }
+.graph {
+  margin-left: 5%;
+}
 
-.figures-display {
+
+.figures-display, .about-content{
   margin: 0 auto;
-  width: 800px !important;
+  min-width: 400px !important;
+  max-width: 900px !important;
+  background-color: white !important;
+  padding: 4%;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .take-action-display {
-  width: 400px;
   margin: 0 auto;
+  min-width: 150px !important;
+  max-width: 600px !important;
+  background-color: white !important;
+  padding: 4%;
+  border-radius: 2%;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .take-action-text {
@@ -112,8 +155,7 @@ input[type]:focus {
 }
 
 .About,
-.about-content,
-.figures-display {
+.about-content {
   margin-top: 5%;
 }
 
@@ -128,4 +170,8 @@ input[type]:focus {
   position: fixed;
   left: 15px;
   bottom: 0;
+}
+
+.card-container{
+  margin-top: 2%;
 }

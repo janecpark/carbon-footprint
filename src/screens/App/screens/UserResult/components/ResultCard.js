@@ -15,14 +15,14 @@ const ResultCard = ({
   return (
     <div className="card container">
       <div className="card-body">
-        <h5 className="card-title">Result date: {dateString}</h5>
+        <h5 className="card-title">{dateString}</h5>
         <p className="card-text">
           Food: {food} <br />
           Housing: {housing} <br />
           Transport: {transport} <br />
-          <strong>Total: {total} tons CO2eq/year</strong>
+          <p className='card-total'><strong>Total: {total} tons CO2eq/year</strong></p>
         </p>
-        <button className="btn btn-warning" onClick={() => removeResult(id)}>
+        <button className="btn btn-warning result-btn" onClick={() => removeResult(id)}>
           Remove
         </button>
       </div>
