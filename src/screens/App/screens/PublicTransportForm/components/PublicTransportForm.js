@@ -28,10 +28,12 @@ const PublicTransportForm = () => {
           <div className="input-group">
             <input
               type="text"
-              className="form-control"
+              shadow-none
+              className="form-control shadow-none"
               id="public-transit"
               placeholder="413 (optional)"
               onChange={handleChange}
+              autoFocus
             ></input>
             <label className="input-group-text">mi/yr</label>
             <div className="input-group-addon"></div>

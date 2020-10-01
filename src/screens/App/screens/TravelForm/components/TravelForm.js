@@ -27,7 +27,8 @@ const TravelForm = () => {
           <h4>Gasoline</h4>
           <div className="input-group">
             <input
-              className="form-control"
+              autoFocus
+              className="form-control shadow-none"
               type="text"
               id="gasoline"
               placeholder="13,800 (optional)"

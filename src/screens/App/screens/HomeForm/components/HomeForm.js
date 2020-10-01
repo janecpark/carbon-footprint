@@ -28,11 +28,12 @@ const HomeForm = () => {
           <div className="input-group">
             <input
               name="electricity"
-              className="form-control"
+              className="form-control shadow-none"
               id="electricity"
               type="text"
               placeholder="1500 (optional)"
               onChange={handleChange}
+              autoFocus
             />
             <div className="input-group-addon">
               <label className="input-group-text">$</label>

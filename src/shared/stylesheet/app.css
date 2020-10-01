@@ -68,7 +68,7 @@ form {
 }
 
 input[type],
-input[type]:focus {
+input[type]:focus{
   background-color: transparent;
   border: 1px solid black;
 }

@@ -25,6 +25,7 @@ const LocationForm = () => {
       <form onSubmit={handleSubmit} className="container ">
         <h4 className="LocationForm-header">Where do you live? </h4>
         <AlgoliaPlaces
+          autofocus = 'true'
           placeholder="Enter zipcode or city"
           options={{
             appId: process.env.ALG_ID,
