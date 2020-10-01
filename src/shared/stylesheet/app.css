@@ -49,22 +49,22 @@ form {
   border: none !important;
 }
 
-.result-btn, .action-btn {
+.result-btn,
+.action-btn {
   background-color: #cadfb6 !important;
   color: black !important;
   border: none !important;
   font-size: 1.5vh !important;
   padding: 10px !important;
-
 }
 
-.result-btn:hover, .action-btn {
+.result-btn:hover,
+.action-btn {
   background-color: #cadfb6d5 !important;
   color: black !important;
   border: none !important;
   font-size: 1.5vh !important;
   padding: 10px !important;
-
 }
 
 input[type],
@@ -78,7 +78,6 @@ input[type]:focus {
   margin: 1em;
   width: 40rem !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .result-display {
@@ -99,7 +98,8 @@ input[type]:focus {
 .about-header {
   font-size: 1.8em;
 }
-.about-header, .card-total{
+.about-header,
+.card-total {
   color: #cadfb6;
 }
 
@@ -122,8 +122,8 @@ input[type]:focus {
   margin-left: 5%;
 }
 
-
-.figures-display, .about-content{
+.figures-display,
+.about-content {
   margin: 0 auto;
   min-width: 400px !important;
   max-width: 900px !important;
@@ -172,6 +172,6 @@ input[type]:focus {
   bottom: 0;
 }
 
-.card-container{
-  margin-top: 2%;
+.card-container {
+  margin: 2% auto;
 }
