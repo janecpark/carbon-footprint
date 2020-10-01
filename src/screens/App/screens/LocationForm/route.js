@@ -1,4 +1,4 @@
-import { routeConstants } from 'shared/constants';
+import { routeConstants } from '../../../..shared/constants';
 import LocationForm from "./";
 
 export default {
