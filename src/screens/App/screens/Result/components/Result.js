@@ -16,7 +16,6 @@ const Result = () => {
   const { result } = useContext(ResultContext);
   const { curUser } = useContext(UserContext);
   const { action } = useContext(ActionContext);
-  const [loading, isLoading] = useState(false)
   let values = Object.values(result);
   let types = Object.keys(result);
   values.pop();

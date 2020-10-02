@@ -29,12 +29,11 @@ const FoodForm = () => {
       ...prevState,
       input_footprint_shopping_food_meatfisheggs_default: food || 1086,
     }));
-    setLoading(true)
+    setLoading(true);
     try {
-      
       let res = await CarbonApi.travelData(formData);
       let data = JSON.parse(res.result);
-      setLoading(false)
+      setLoading(false);
       if (data.response.hasOwnProperty('failed')) {
         setResult((e) => ({ ...e, errors: data.response.error_message }));
       } else {
@@ -61,12 +60,11 @@ const FoodForm = () => {
           fridge: data_result.energy_star_fridge,
           green_electricity: data_result.purchase_green_electricity,
         });
-       
       }
     } catch (err) {
       setResult((e) => ({ ...e, errors: { ...err } }));
     }
-   
+
     history.push('/result');
   }
   const labels = {
@@ -77,13 +75,13 @@ const FoodForm = () => {
   };
   if (loading) {
     return (
-        <div className="d-flex justify-content-center mt-5">
-            <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
+      <div className="d-flex justify-content-center mt-5">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
         </div>
+      </div>
     );
-}
+  }
 
   return (
     <div>
