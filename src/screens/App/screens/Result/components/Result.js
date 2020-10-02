@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import ResultContext from '../../../ResultContext';
 import CarbonApi from '../../../CarbonApi';
@@ -16,6 +16,7 @@ const Result = () => {
   const { result } = useContext(ResultContext);
   const { curUser } = useContext(UserContext);
   const { action } = useContext(ActionContext);
+  const [loading, isLoading] = useState(false)
   let values = Object.values(result);
   let types = Object.keys(result);
   values.pop();

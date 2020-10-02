@@ -42,6 +42,7 @@ const Signup = () => {
   }
   return (
     <div className="Signup">
+      <h2 className='Signup-header'>Sign up</h2>
       <form className="signUpForm container" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username</label>

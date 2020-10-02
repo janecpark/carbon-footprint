@@ -38,7 +38,7 @@ const Login = () => {
   }
 
   const loginForm = (
-    <form className="container" onSubmit={handleSubmit}>
+    <form className="container login-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
@@ -67,6 +67,7 @@ const Login = () => {
 
   return (
     <div className="Login">
+      <h2 className='Login-header'>Login</h2>
       {userData.errors.length ? (
         <Alert type="danger" messages={userData.errors} />
       ) : null}

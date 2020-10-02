@@ -68,7 +68,7 @@ form {
 }
 
 input[type],
-input[type]:focus{
+input[type]:focus {
   background-color: transparent;
   border: 1px solid black;
 }
@@ -123,13 +123,15 @@ input[type]:focus{
 }
 
 .figures-display,
-.about-content {
+.about-content,
+.login-form,
+.signUpForm {
   margin: 0 auto;
   min-width: 400px !important;
   max-width: 900px !important;
   background-color: white !important;
   padding: 4%;
-  border-radius: 2%;
+  border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -155,7 +157,9 @@ input[type]:focus{
 }
 
 .About,
-.about-content {
+.about-content,
+.Login,
+.Signup {
   margin-top: 5%;
 }
 
@@ -174,4 +178,9 @@ input[type]:focus{
 
 .card-container {
   margin: 2% auto;
+}
+
+.Login-header, .Signup-header{
+  text-align: center;
+  margin-bottom: 3%;
 }
