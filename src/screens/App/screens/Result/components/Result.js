@@ -17,16 +17,12 @@ const Result = () => {
   const { curUser } = useContext(UserContext);
   const { action } = useContext(ActionContext);
   let values = Object.values(result);
-  let types = Object.keys(result);
-  values.pop();
-  types.pop();
-  let data = values.map((el, idx) => {
-    return {
-      x: types[idx],
-      y: values[idx],
-    };
-  });
-
+  let total = values.pop();
+  let average = [
+    { x: 'Global', y: 4 },
+    { x: 'US', y: 16 },
+  ];
+  average.unshift({ x: 'Your Footprint', y: total });
   async function handleSubmit() {
     const res = await CarbonApi.sendResult(result, curUser);
     await CarbonApi.actionResult(action, res.result.id);
@@ -58,8 +54,9 @@ const Result = () => {
           </div>
         </div>
         <div className="col-md graph">
+          <p className='text-center'>Compare Average</p>
           <XYPlot height={300} width={300} xType="ordinal" stackBy="y">
-            <VerticalBarSeries data={data} color="#CADFB6" />
+            <VerticalBarSeries data={average} color="#CADFB6" />
             <XAxis />
             <YAxis />
           </XYPlot>
@@ -100,8 +97,9 @@ const Result = () => {
           </div>
         </div>
         <div className="col-md graph">
+          <p className='text-center'>Compare Average</p>
           <XYPlot height={300} width={300} xType="ordinal" stackBy="y">
-            <VerticalBarSeries data={data} color="#CADFB6" />
+            <VerticalBarSeries data={average} color="#CADFB6" />
             <XAxis />
             <YAxis />
           </XYPlot>
