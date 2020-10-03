@@ -3,7 +3,7 @@
 https://carbon-footprint.netlify.app/
 
 ## About
-The goal of this project was to spread awareness and help reduce the carbon footprint
+The goal of this project was to spread awareness and help reduce carbon footprint
 
 - Allows individuals or households in the U.S. to calculate their carbon footprint
 - Get personalized advice on managing their climate impact
