@@ -21,13 +21,11 @@ const Homepage = () => {
         <h2 className="Homepage-header">
           Welcome to Carbon Footprint Calculator
         </h2>
-        <Link
-          to="/household1"
-          className="btn btn-warning text-center"
-          id="stepBtn"
-        >
-          Take the first step
-        </Link>
+        <div className="d-flex justify-content-center">
+          <Link to="/household1" className="btn btn-warning text-center stepBtn">
+            Take the first step
+          </Link>
+        </div>
       </div>
     </div>
   );

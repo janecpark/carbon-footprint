@@ -12,11 +12,8 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 }
 
-#stepBtn {
-  position: absolute;
-  bottom: 20%;
-  left: 46%;
-  right: 46%;
+.stepBtn { 
+  margin-top: 40vh;
   background-color: #aad4f1;
   border: none;
   padding: 10px !important;
