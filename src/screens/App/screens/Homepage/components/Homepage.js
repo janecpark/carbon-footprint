@@ -17,7 +17,7 @@ const Homepage = () => {
 
   return (
     <div className="Homepage" style={style}>
-      <div className="container header text-center ">
+      <div className="container header">
         <h2 className="Homepage-header">
           Welcome to Carbon Footprint Calculator
         </h2>

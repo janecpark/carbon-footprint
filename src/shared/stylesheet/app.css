@@ -3,7 +3,7 @@
 
 body {
   background-image: url('../images/earth.png');
-  height: 90vh;
+  height: 100vh;
   background-repeat: repeat;
   background-position: center;
   background-size: auto;
@@ -13,7 +13,8 @@ body {
 }
 
 .stepBtn { 
-  margin-top: 40vh;
+  position: absolute;
+  bottom: 50px;
   background-color: #aad4f1;
   border: none;
   padding: 10px !important;
@@ -24,7 +25,8 @@ body {
 }
 
 .Homepage-header {
-  padding: 15%;
+  padding: 10%;
+  text-align: center;
   font-family: Rubik !important;
 }
 
@@ -37,7 +39,7 @@ form {
   background-color: #aad4f1 !important;
   color: black !important;
   border: none !important;
-  font-size: 1.5vh !important;
+  font-size: 12px !important;
 }
 
 .btn:hover {
@@ -51,7 +53,7 @@ form {
   background-color: #cadfb6 !important;
   color: black !important;
   border: none !important;
-  font-size: 1.5vh !important;
+  font-size: 12px !important;
   padding: 10px !important;
 }
 
@@ -60,7 +62,7 @@ form {
   background-color: #cadfb6d5 !important;
   color: black !important;
   border: none !important;
-  font-size: 1.5vh !important;
+  font-size: 12px !important;
   padding: 10px !important;
 }
 
@@ -113,7 +115,7 @@ input[type]:focus {
 .Results,
 .TakeAction,
 .User-result-text {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .graph {
   margin-left: 5%;
@@ -124,8 +126,9 @@ input[type]:focus {
 .login-form,
 .signUpForm {
   margin: 0 auto;
+  margin-bottom: 30px;
   min-width: 400px !important;
-  max-width: 900px !important;
+  max-width: 800px !important;
   background-color: white !important;
   padding: 4%;
   border-radius: 20px;
@@ -157,7 +160,7 @@ input[type]:focus {
 .about-content,
 .Login,
 .Signup {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .alert-container {

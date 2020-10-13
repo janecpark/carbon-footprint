@@ -36,7 +36,7 @@ const Result = () => {
           <div className="figures">
             <div className="figures-total">{result.total}</div>
             <div className="figures-text text-right">
-              Your Carbon Footprint (CO2 emissions/year)
+              Your Carbon Footprint (CO2 emissions/year tons)
             </div>
           </div>
           <hr />
@@ -79,7 +79,7 @@ const Result = () => {
           <div className="figures">
             <div className="figures-total">{result.total}</div>
             <div className="figures-text text-right">
-              Your Carbon Footprint (CO2 emissions/year)
+              Your Carbon Footprint (CO2 emissions/year tons)
             </div>
           </div>
           <hr />
